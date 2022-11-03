@@ -103,9 +103,9 @@ def parseLogs(filepath, reg_exp, file_reg_exp, savefile):
     path = Path(filepath)
 
     if path.suffix == '.log' or path.suffix == '.txt':
-        print(f'Read file at path ({path}), parse file by RegExp ({reg_exp}), save in file at path ({savefile})')
+        parseFile(path, reg_exp, savefile)
     elif path.suffix == '':
-        print(f'Read all files at path ({path}), parse files by FileRegExp ({file_reg_exp}), parse current files by RegExp ({reg_exp}), save in file at path ({savefile})')
+        parseDir(path, reg_exp, file_reg_exp, savefile)
     else:
         print('Incorrect path to file')
 
